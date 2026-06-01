@@ -7,6 +7,7 @@ require('dotenv').config();
 const app = express();
 const port = 3300;
 
+const filePath = path.join("/tmp", "google-api-credentials.json");
 
 const credentials = {
   type: 'service_account',
@@ -23,7 +24,7 @@ const credentials = {
 };
 
 fs.writeFileSync(
-  '/tmp/google-api-credentials.json',
+  filePath,
   JSON.stringify(credentials, null, 2)
 );
 
