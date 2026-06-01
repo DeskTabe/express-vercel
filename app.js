@@ -5,7 +5,7 @@ const app = express();
 const port = 3300;
 
 const auth = new google.auth.GoogleAuth({
-  keyFile:'google.json',
+  keyFile:'google-api-credentials.json',
   scopes:['https://www.googleapis.com/auth/spreadsheets']
 })
 
