@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start": "node generate-google-api-credentials.js && node app"
+    "start": "node app"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
