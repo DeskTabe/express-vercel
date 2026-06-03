@@ -10,6 +10,14 @@ const port = 3300;
 
 const filePath = path.join("/tmp", "google-api-credentials.json");
 
+var allowCrossDomain = function(req,res,next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();  
+}
+app.use(allowCrossDomain);
+
 const credentials = {
   type: 'service_account',
   project_id: process.env.PROJECT_ID,
@@ -33,15 +41,6 @@ const auth = new google.auth.GoogleAuth({
   keyFile:'google-api-credentials.json',
   scopes:['https://www.googleapis.com/auth/spreadsheets']
 })
-
-
-// var allowCrossDomain = function(req,res,next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type');
-//   next();  
-// }
-// app.use(allowCrossDomain);
 
 
 async function  writeToSheet(values) {
