@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 const port = 3300;
 
-const filePath = path.join("/tmp", "google-api-credentials.json");
+const filePath = path.join("/tmp/", "google-api-credentials.json");
 
 var allowCrossDomain = function(req,res,next) {
   res.header('Access-Control-Allow-Origin', '*');
