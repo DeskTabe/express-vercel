@@ -38,7 +38,7 @@ fs.writeFileSync(
 );
 
 const auth = new google.auth.GoogleAuth({
-  keyFile:'google-api-credentials.json',
+  credentials: credentials,
   scopes:['https://www.googleapis.com/auth/spreadsheets']
 })
 
